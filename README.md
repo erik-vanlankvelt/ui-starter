@@ -1,11 +1,12 @@
 # ui-starter
 
 ## Overview
-Starter UI project.
+Starter UI project using:
 - [Babel](https://github.com/babel/babel)
 - [Webpack](https://github.com/webpack/webpack)
 - [React](https://github.com/facebook/react).
 - [Sass](https://github.com/sass/sass)
+- [Jest](https://github.com/facebook/jest)
 
 ## Setup
 ##### Install homebrew (if not done already)
