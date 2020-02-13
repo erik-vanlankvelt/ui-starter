@@ -5,9 +5,33 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode development",
+    "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
     "start": "webpack-dev-server --mode development",
     "test": "jest --config ./jest.config.json",
     "test:watch": "npm run test -- --watch"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "plugin:prettier/recommended"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.+(js|jsx)": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.+(json|css|md)": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
@@ -27,8 +51,14 @@
     "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.4.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
     "jest": "^25.1.0",
+    "lint-staged": "^10.0.7",
     "node-sass": "^4.13.1",
+    "prettier": "^1.19.1",
     "react-test-renderer": "^16.12.0",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",
