@@ -1,0 +1,17 @@
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+	height: 100%;
+}
+
+body {
+	font-size: rem(16);
+	height: 100%;
+	line-height: 1.45;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
